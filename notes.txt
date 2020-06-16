@@ -1,0 +1,73 @@
+// CI = Continuous Integration
+// Process to megge all code changes into a single branch
+
+// CI server
+// Server that runs automatic checks (tests) on the codebase
+// to ensure that changes have not broken anything
+
+// CI Flow - frequently uses
+// 1. Developer pushes code to github
+// 2. CI Server detects tha a new push of code has occured
+// 3. CI Server clones project to a cloud-based virtual machine
+// 4. CI Server runs all tests
+// 5. If all tests pass, CI Server makes build as 'passing' and does some optional followup
+
+// Using Travis with '.travis.yml' file
+
+// YAML to JSON
+
+// Normal field:
+
+// color: 'red' -> { "color": "red"}
+
+// Nested object:
+
+// languagesIKnow: 
+//          english: 'very well'
+//          spanish: 'kind of'
+
+// -->
+
+// "languagesIKnow": {
+//         "english": "very well",
+//         "spanish": "kind of"
+// }
+
+// Array:
+
+// countToThree:
+//  - 'one'
+//  - 'two'
+//  - 3
+
+// -->
+
+// "countToThree": [
+//      "one",
+//      "two,   
+//      3
+// ]
+
+// Travis
+
+// docs.travis-ci.com
+// trusty - small version of linux
+// .travis.yml
+// cache node_modules to makes things faster
+// if we change node_modules, we just override cache running npm install
+
+// Production buiding
+// npm install --prefix client -> go to client and run npm i
+// npm run build --prefix client
+
+// nohup - (no hangup) if the shell is closed, do not kill anything this command creates
+// & - run this command in a subshell (in the background) - work only on Mac and Linux
+// sleep 3 - wait for 3 seconds
+// We want to start CI server on port 3000, because in CI mode there is no React Server
+
+// Adjusting env for travis
+
+// Changing git origin
+
+// git remote remove origin
+// git add origin ...
